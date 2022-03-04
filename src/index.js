@@ -394,10 +394,10 @@ reportWebVitals();
 //     return (<p>{sum(1,2)}</p>)
 //   }
 // };
-ReactDOM.render (
-  <Dong />,
-  document.getElementById('root')
-);
+// ReactDOM.render (
+//   <Dong />,
+//   document.getElementById('root')
+// );
 //这样的函数被称为“纯函数”，因为该函数不会尝试更改入参，且多次调用下相同的入参始终返回相同的结果。
 
 //相反，下面这个函数则不是纯函数，因为它更改了自己的入参：
