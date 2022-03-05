@@ -74,4 +74,4 @@ class LoggingButton extends React.Component {
         </button>
       );
     }
-  }
+  };
