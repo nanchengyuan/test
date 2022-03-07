@@ -408,34 +408,17 @@ reportWebVitals();
 
 
 //State & 生命周期
-// function tick() {
-//     const element = (
-//         <div>
-//             <h1>Hello ,world!</h1>
-//             <h2>It is {new Date().toLocaleTimeString()}</h2>
-//         </div>
-//     );
-//     ReactDOM.render(
-//         element,
-//         document.getElementById('root')
-//     );
-// };
-// setInterval(tick, 10000);
-//在本章节中，我们将学习如何封装真正可复用的 Clock 组件。它将设置自己的计时器并每秒更新一次。
-//可以从封装时钟的外观开始：
-function Clock(props) {
-    return (
-        <div>
-            <h1>Hello,world!</h1>
-            <h2>It is {props.date.toLocaleTimeString()}</h2>
-        </div>
-    );
-}
 function tick() {
+    const element = (
+      <div>
+        <h1>Hello ,world!</h1>
+        <h2>It is {new Date().toLocaleTimeString()}</h2>
+      </div>
+    );
     ReactDOM.render (
-        <Clock date = {new Date()}/>,
+        element,
         document.getElementById('root')
-    )
-};
-setInterval(tick,1000);
-
+    );
+  }
+  
+setInterval(tick,10000);

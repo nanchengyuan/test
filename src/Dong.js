@@ -59,19 +59,3 @@ import React from "react";
 // var aaa=(e)=>{
 
 // }
-
-//如果你没有使用 class fields 语法，你可以在回调中使用箭头函数：
-class LoggingButton extends React.Component {
-    handleClick() {
-      console.log('this is:', this);
-    }
-  
-    render() {
-      // 此语法确保 `handleClick` 内的 `this` 已被绑定。
-      return (
-        <button onClick={() => this.handleClick()}>
-          Click me
-        </button>
-      );
-    }
-  };

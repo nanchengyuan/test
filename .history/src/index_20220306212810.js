@@ -433,9 +433,8 @@ function Clock(props) {
 }
 function tick() {
     ReactDOM.render (
-        <Clock date = {new Date()}/>,
+        <Clock date = {new Date()} />,
         document.getElementById('root')
     )
 };
-setInterval(tick,1000);
-
+setInterval(tick,1000)
