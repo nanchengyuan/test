@@ -1039,3 +1039,91 @@ reportWebVitals();
 
 
 
+//列表 & Key
+//如下代码，我们使用 map() 函数让数组中的每一项变双倍，然后我们得到了一个新的列表 doubled 并打印出来：
+// const numbers = [1,2,3,4,5,6,7];
+// const doubled = numbers.map((number) => number * 2);
+// console.log(doubled) 
+
+//在 React 中，把数组转化为元素列表的过程是相似的。
+
+//渲染多个组件
+//可以通过使用 {} 在 JSX 内构建一个元素集合。
+//使用 Javascript 中的 map() 方法来遍历 numbers 数组。将数组中的每个元素变成 <li> 标签，最后我们将得到的数组赋值给 listItems:
+// const number = [1,2,3,4,5];
+// const listItems = number.map((number) =>
+//   <li>{number}</li>
+// );
+// //我们把整个 listItems 插入到 <ul> 元素中，然后渲染进 DOM：
+// ReactDOM.render(
+//   <ul>{listItems}</ul>,
+//   document.getElementById('root')
+// );
+
+
+//输入值实时显示输入数据
+class Pos extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { shuru: '', jieguoArray: [] }
+  };
+  render() {
+    return (
+      <div >
+        <input onChange={(e) => {
+          this.setState({ shuru: e.target.value })
+        }} id="1"/>
+        <button onClick={(e) => {
+          this.setState({jieguoArray : [this.state.shuru,...this.state.jieguoArray]})
+        }}>确定</button>
+        <h1>输入：{this.setState.shuru}</h1>
+        <div>
+          {this.state.jieguoArray.map((item) => {
+            return <p>{item}</p>
+          })}
+        </div>
+      </div>
+    )
+  };
+}
+ReactDOM.render(
+  <Pos />,
+  document.getElementById('root')
+);
+
+
+
+//删除指定位置
+//splice (index,howmany)
+//index：表示从指定的位置上（哪里）删除元素；
+//howmany：表示应该删除多少个元素，赋值为0就表示不删除元素；
+//新增队头一个
+//unshift   在数组开始删除一个元素(删且只删除1个),并返回 被删除的元素
+
+//arr.slice(start, [end])
+//要点：
+//1、返回新数组，而原数组保持不变
+//2、如果没有指定 end 元素，那么切分的数组包含从 start 到数组结束的所有元素
+//3、如果  start 元素是负数，那就从数组尾部算起，-1 是指最后一个元素
+//arr.splice(start, [deleteCount, itemToInsert1, itemToInsert2, ...])
+//要点：
+//1、返回一个数组，包含被删除的元素
+//2、如果  start 元素是负数，那就从数组尾部算起，-1 是指最后一个元素
+//3、如果没有指定 deleteCount，则删除至原数组尾部
+//4、如果没有指定 itemToInsert1，则不向原数组添加元素
+//如果需要改变原数组，或者为原数组增加元素，用 splice。
+//如果只是删除元素，而不改变原数组，用 slice。
+
+//filter
+// var arr = [1, 2, '', 3, ' '];
+// var arr2 = arr.filter(function (item) {
+//   return item;
+// });
+// var array = [{ id: 1, name: "b" }, { id: 2, name: "b" }];
+// var arr2 = arr.filter(function (item) {
+//   return item.id != 1;
+// });
+// ReactDOM.render(
+//   arr2, array,
+//   document.getElementById('root')
+// );
